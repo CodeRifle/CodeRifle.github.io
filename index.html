@@ -4,270 +4,118 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rishabh Gupta - AI Engineer</title>
-    <style>
-        :root {
-            --primary-color: #2a2a2a;
-            --secondary-color: #4a90e2;
-            --text-color: #333;
-            --background-color: #f5f5f5;
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Arial', sans-serif;
-        }
-
-        body {
-            background-color: var(--background-color);
-            color: var(--text-color);
-            line-height: 1.6;
-            padding: 20px;
-        }
-
-        .container {
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 20px;
-        }
-
-        header {
-            text-align: center;
-            margin-bottom: 40px;
-            padding: 20px;
-            background: var(--primary-color);
-            color: white;
-            border-radius: 10px;
-        }
-
-        h1 {
-            font-size: 2.5em;
-            margin-bottom: 10px;
-        }
-
-        .subtitle {
-            font-size: 1.2em;
-            color: var(--secondary-color);
-        }
-
-        .chat-container {
-            background: white;
-            border-radius: 10px;
-            padding: 20px;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-            height: 500px;
-            display: flex;
-            flex-direction: column;
-        }
-
-        .chat-messages {
-            flex-grow: 1;
-            overflow-y: auto;
-            margin-bottom: 20px;
-            padding: 10px;
-        }
-
-        .message {
-            margin-bottom: 15px;
-            padding: 10px 15px;
-            border-radius: 10px;
-            max-width: 80%;
-            opacity: 0;
-            transform: translateY(20px);
-            transition: opacity 0.5s ease, transform 0.5s ease;
-        }
-
-        .message.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        .user-message {
-            background: var(--secondary-color);
-            color: white;
-            margin-left: auto;
-        }
-
-        .bot-message {
-            background: #f0f0f0;
-            margin-right: auto;
-        }
-
-        .chat-input {
-            display: flex;
-            gap: 10px;
-        }
-
-        input[type="text"] {
-            flex-grow: 1;
-            padding: 10px;
-            border: 1px solid #ddd;
-            border-radius: 5px;
-            font-size: 1em;
-        }
-
-        button {
-            padding: 10px 20px;
-            background: var(--secondary-color);
-            color: white;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            transition: background 0.3s ease;
-        }
-
-        button:hover {
-            background: #357abd;
-        }
-
-        .typing-indicator {
-            display: none;
-            margin-bottom: 15px;
-        }
-
-        .typing-indicator span {
-            display: inline-block;
-            width: 8px;
-            height: 8px;
-            background: #90909090;
-            border-radius: 50%;
-            margin-right: 5px;
-            animation: typing 1s infinite;
-        }
-
-        .typing-indicator span:nth-child(2) { animation-delay: 0.2s; }
-        .typing-indicator span:nth-child(3) { animation-delay: 0.4s; }
-
-        @keyframes typing {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-5px); }
-        }
-
-        .suggested-prompts {
-            display: flex;
-            gap: 10px;
-            margin-top: 20px;
-            flex-wrap: wrap;
-        }
-
-        .prompt-chip {
-            padding: 5px 15px;
-            background: #e0e0e0;
-            border-radius: 20px;
-            cursor: pointer;
-            transition: background 0.3s ease;
-        }
-
-        .prompt-chip:hover {
-            background: #d0d0d0;
-        }
-    </style>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="container">
+    <div class="site-container"> <!-- New overall container -->
+        <nav id="navbar">
+            <div class="container"> <!-- To keep content aligned with other sections -->
+                <a href="#home" class="nav-logo">Rishabh Gupta</a>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#skills">Skills</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </div>
+        </nav>
         <header>
             <h1>Rishabh Gupta</h1>
             <div class="subtitle">AI Engineer</div>
         </header>
-        
-        <div class="chat-container">
-            <div class="chat-messages">
-                <div class="message bot-message visible">
-                    Hello! I'm Rishabh's portfolio assistant. Feel free to ask me anything about Rishabh's work, experience, or skills!
+        <main> <!-- Main content wrapper -->
+            <div id="home" class="container"> <!-- Renamed original chat container div -->
+                <div class="chat-container"> <!-- This class is for the chat specific styling -->
+                    <div class="chat-messages">
+                        <div class="message bot-message visible">
+                            Hello! I'm Rishabh's portfolio assistant. Feel free to ask me anything about Rishabh's work, experience, or skills!
+                        </div>
+                    </div>
+
+                    <div class="typing-indicator">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+
+                    <div class="chat-input">
+                        <input type="text" placeholder="Ask me anything about Rishabh..." id="userInput">
+                        <button onclick="sendMessage()">Send</button>
+                    </div>
+
+                    <div class="suggested-prompts">
+                        <div class="prompt-chip" onclick="usePrompt('Who is Rishabh Gupta?')">Who is Rishabh Gupta?</div>
+                        <div class="prompt-chip" onclick="usePrompt('What are his skills?')">What are his skills?</div>
+                        <div class="prompt-chip" onclick="usePrompt('Show me his projects')">Show me his projects</div>
+                    </div>
                 </div>
             </div>
-            
-            <div class="typing-indicator">
-                <span></span>
-                <span></span>
-                <span></span>
+            <section id="about" class="container">
+                <h2>About Me</h2>
+                <div class="about-content">
+                    <div class="about-text">
+                        <p>Hello! I'm Rishabh Gupta, an AI Engineer driven by a passion for building intelligent systems that solve real-world problems. My journey into the world of Artificial Intelligence began with a fascination for how machines can learn, adapt, and make decisions.</p>
+                        <p>Over the years, I've honed my skills in machine learning, deep learning, natural language processing, and computer vision. I thrive on tackling complex challenges and transforming innovative ideas into tangible AI solutions. I believe in the transformative power of AI and am dedicated to contributing to its ethical and impactful advancement.</p>
+                        <p>When I'm not immersed in code or exploring new algorithms, I enjoy reading about the latest tech advancements, hiking, and contributing to open-source projects.</p>
+                    </div>
+                    <div class="about-image">
+                        <img src="https://via.placeholder.com/250" alt="Rishabh Gupta - Profile Picture" style="width:100%;max-width:250px;border-radius:10px;">
+                    </div>
+                </div>
+            </section>
+            <section id="projects" class="container">
+                <h2>My Projects</h2>
+                <div class="projects-grid">
+                    <div class="project-card">
+                        <img src="https://via.placeholder.com/350x200?text=Project+Alpha" alt="Project Alpha Thumbnail">
+                        <h3>Project Alpha</h3>
+                        <p>An innovative AI solution for advanced data analytics, leveraging machine learning to uncover hidden patterns and provide actionable insights from complex datasets.</p>
+                        <p><strong>Technologies:</strong> Python, Scikit-learn, Pandas, TensorFlow</p>
+                        <div class="project-links">
+                            <a href="#" class="btn-link">View on GitHub</a>
+                            <a href="#" class="btn-link">Live Demo</a>
+                        </div>
+                    </div>
+                    <div class="project-card">
+                        <img src="https://via.placeholder.com/350x200?text=Project+Beta" alt="Project Beta Thumbnail">
+                        <h3>Project Beta</h3>
+                        <p>A natural language processing engine designed for real-time sentiment analysis and topic modeling from various text sources, enhancing customer feedback understanding.</p>
+                        <p><strong>Technologies:</strong> Python, NLTK, SpaCy, PyTorch</p>
+                        <div class="project-links">
+                            <a href="#" class="btn-link">View on GitHub</a>
+                            <a href="#" class="btn-link">Live Demo</a>
+                        </div>
+                    </div>
+                     <div class="project-card">
+                        <img src="https://via.placeholder.com/350x200?text=Project+Gamma" alt="Project Gamma Thumbnail">
+                        <h3>Project Gamma</h3>
+                        <p>A computer vision system for automated object detection and classification in images and videos, built for scalability and high accuracy in diverse environments.</p>
+                        <p><strong>Technologies:</strong> Python, OpenCV, YOLO, Keras</p>
+                        <div class="project-links">
+                            <a href="#" class="btn-link">View on GitHub</a>
+                            <a href="#" class="btn-link">Live Demo</a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section id="skills" class="container"></section>
+            <section id="contact" class="container">
+                <h2>Get In Touch</h2>
+                <p>If you'd like to discuss a project or opportunity, feel free to reach out to me at <a href="mailto:rishabh.placeholder@example.com">rishabh.placeholder@example.com</a>.</p>
+            </section>
+        </main>
+        <footer id="footer">
+            <div class="container">
+                <p>&copy; 2024 Rishabh Gupta. All Rights Reserved.</p>
+                <div class="social-links">
+                    <a href="#" target="_blank">LinkedIn</a>
+                    <a href="#" target="_blank">GitHub</a>
+                    <a href="#" target="_blank">Twitter</a>
+                </div>
             </div>
-            
-            <div class="chat-input">
-                <input type="text" placeholder="Ask me anything about Rishabh..." id="userInput">
-                <button onclick="sendMessage()">Send</button>
-            </div>
-            
-            <div class="suggested-prompts">
-                <div class="prompt-chip" onclick="usePrompt('Who is Rishabh Gupta?')">Who is Rishabh Gupta?</div>
-                <div class="prompt-chip" onclick="usePrompt('What are his skills?')">What are his skills?</div>
-                <div class="prompt-chip" onclick="usePrompt('Show me his projects')">Show me his projects</div>
-            </div>
-        </div>
+        </footer>
     </div>
-
-    <script>
-        const responses = {
-            'who is rishabh gupta?': `Rishabh Gupta is an accomplished AI Engineer with expertise in developing and implementing cutting-edge artificial intelligence solutions. He has a strong background in machine learning, deep learning, and natural language processing, with a proven track record of delivering innovative AI-powered applications.`,
-            
-            'what are his skills?': `Rishabh's technical skills include:
-            • Deep Learning & Machine Learning (PyTorch, TensorFlow)
-            • Natural Language Processing
-            • Computer Vision
-            • Large Language Models (LLMs)
-            • Python, JavaScript, and various AI/ML frameworks
-            • Cloud platforms (AWS, GCP)`,
-            
-            'show me his projects': `Here are some of Rishabh's notable projects:
-            1. Developed an advanced NLP system for automated customer support
-            2. Created a computer vision solution for real-time object detection
-            3. Implemented a recommendation engine using deep learning
-            4. Built scalable ML pipelines for production environments`,
-
-            'default': `I'm not sure about that specific query, but I'd be happy to tell you about Rishabh's experience, skills, or projects. Feel free to ask about those topics!`
-        };
-
-        const chatMessages = document.querySelector('.chat-messages');
-        const userInput = document.getElementById('userInput');
-        const typingIndicator = document.querySelector('.typing-indicator');
-
-        function addMessage(message, isUser = false) {
-            const messageDiv = document.createElement('div');
-            messageDiv.className = `message ${isUser ? 'user-message' : 'bot-message'}`;
-            messageDiv.textContent = message;
-            chatMessages.appendChild(messageDiv);
-            
-            // Trigger reflow for animation
-            messageDiv.offsetHeight;
-            messageDiv.classList.add('visible');
-            
-            chatMessages.scrollTop = chatMessages.scrollHeight;
-        }
-
-        function simulateTyping() {
-            typingIndicator.style.display = 'block';
-            return new Promise(resolve => setTimeout(resolve, Math.random() * 1000 + 1000));
-        }
-
-        async function getResponse(message) {
-            const normalizedMessage = message.toLowerCase().trim();
-            await simulateTyping();
-            typingIndicator.style.display = 'none';
-            return responses[normalizedMessage] || responses['default'];
-        }
-
-        async function sendMessage() {
-            const message = userInput.value.trim();
-            if (!message) return;
-
-            addMessage(message, true);
-            userInput.value = '';
-
-            const response = await getResponse(message);
-            addMessage(response);
-        }
-
-        function usePrompt(prompt) {
-            userInput.value = prompt;
-            sendMessage();
-        }
-
-        userInput.addEventListener('keypress', (e) => {
-            if (e.key === 'Enter') {
-                sendMessage();
-            }
-        });
-    </script>
+    <script src="script.js"></script>
 </body>
 </html>

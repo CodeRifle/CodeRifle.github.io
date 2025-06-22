@@ -30,8 +30,14 @@ async function initializeSession() {
     try {
         // Assuming LanguageModel is available globally e.g. via a <script> tag
         if (window.LanguageModel && typeof window.LanguageModel.create === 'function') {
-            modelSession = await window.LanguageModel.create();
-            console.log("LanguageModel session initialized.");
+            const systemPromptConfig = {
+                initialPrompts: [{
+                    role: 'system',
+                    content: 'You are a specialized AI assistant for Rishabh Gupta\\'s portfolio. Rishabh is an AI Engineer. Your primary functions are to:\\n1. Provide information about Rishabh\\'s background, passion for AI, and journey in the field.\\n2. Detail Rishabh\\'s skills, including machine learning (PyTorch, TensorFlow), deep learning, natural language processing (NLTK, SpaCy), computer vision (OpenCV, YOLO), LLMs, Python, JavaScript, and cloud platforms (AWS, GCP).\\n3. Describe Rishabh\\'s projects, such as \\'Project Alpha\\' (data analytics), \\'Project Beta\\' (NLP engine for sentiment analysis), and \\'Project Gamma\\' (computer vision for object detection), highlighting the technologies used.\\n4. Encourage users to explore the different sections of the website (Home, About, Projects, Skills, Contact).\\n5. If asked for opinions or information outside of Rishabh\\'s professional context as presented on the site, politely decline and redirect to portfolio-related topics. Maintain a professional, helpful, and enthusiastic tone.'
+                }],
+            };
+            modelSession = await window.LanguageModel.create(systemPromptConfig);
+            console.log("LanguageModel session initialized with system prompt.");
         } else {
             console.error("LanguageModel library not found or 'create' method is missing.");
             addMessage("Error: Chat functionality is currently unavailable. LanguageModel library not found.", false);

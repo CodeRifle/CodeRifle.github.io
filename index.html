@@ -124,8 +124,11 @@
         if (typeof window.LanguageModel === 'undefined') {
             console.log("Mocking LanguageModel for development purposes.");
             window.LanguageModel = {
-                create: async () => {
+                create: async (config) => {
                     console.log("Mock LanguageModel.create() called");
+                    if (config?.initialPrompts?.[0]?.content) {
+                        console.log("Mock LanguageModel received system prompt:", config.initialPrompts[0].content);
+                    }
                     return {
                         prompt: async (message) => {
                             console.log(`Mock session.prompt() called with: "${message}"`);

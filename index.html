@@ -116,6 +116,30 @@
             </div>
         </footer>
     </div>
+    <!-- Assuming Google Gemini SDK. Replace with the correct SDK if different -->
+    <script type="module">
+        // This is a placeholder. The actual LanguageModel library (e.g., from a CDN)
+        // would make `LanguageModel` available globally or as a module.
+        // For demonstration, we'll mock a simple version if it's not already defined.
+        if (typeof window.LanguageModel === 'undefined') {
+            console.log("Mocking LanguageModel for development purposes.");
+            window.LanguageModel = {
+                create: async () => {
+                    console.log("Mock LanguageModel.create() called");
+                    return {
+                        prompt: async (message) => {
+                            console.log(`Mock session.prompt() called with: "${message}"`);
+                            await new Promise(resolve => setTimeout(resolve, 1000)); // Simulate network delay
+                            if (message.toLowerCase().includes("error test")) {
+                                throw new Error("Simulated LLM error.");
+                            }
+                            return `Mock response to: "${message}"`;
+                        }
+                    };
+                }
+            };
+        }
+    </script>
     <script src="script.js"></script>
 </body>
 </html>

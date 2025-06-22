@@ -126,7 +126,7 @@
             window.LanguageModel = {
                 create: async (config) => {
                     console.log("Mock LanguageModel.create() called");
-                    if (config && config.initialPrompts && config.initialPrompts.length > 0) {
+                    if (config?.initialPrompts?.[0]?.content) {
                         console.log("Mock LanguageModel received system prompt:", config.initialPrompts[0].content);
                     }
                     return {

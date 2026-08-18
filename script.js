@@ -50,8 +50,7 @@ async function initializeSession() {
     }
 }
 
-// Call initializeSession when the script loads
-initializeSession();
+// Initialize session on user gesture instead of script load
 
 
 function addMessage(message, isUser = false) {
@@ -88,7 +87,12 @@ async function sendMessage() {
     simulateTyping(); // Show typing indicator
 
     if (!modelSession) {
-        addMessage("Chat assistant is not available. Session not initialized.", false);
+        await initializeSession();
+    }
+
+    if (!modelSession) {
+        // If it's still null after attempting to initialize
+        addMessage("Chat assistant is not available. Session could not be initialized.", false);
         typingIndicator.style.display = 'none';
         return;
     }

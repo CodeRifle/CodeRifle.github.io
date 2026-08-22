@@ -3,14 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Rishabh Gupta - AI Engineer</title>
+    <title>Alex Chen - Full-Stack AI Developer</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div class="site-container"> <!-- New overall container -->
         <nav id="navbar">
             <div class="container"> <!-- To keep content aligned with other sections -->
-                <a href="#home" class="nav-logo">Rishabh Gupta</a>
+                <a href="#home" class="nav-logo">Alex Chen</a>
                 <ul>
                     <li><a href="#home">Home</a></li>
                     <li><a href="#about">About</a></li>
@@ -20,16 +20,16 @@
                 </ul>
             </div>
         </nav>
-        <header>
-            <h1>Rishabh Gupta</h1>
-            <div class="subtitle">AI Engineer</div>
+        <header class="animate-on-scroll">
+            <h1>Alex Chen</h1>
+            <div class="subtitle">Full-Stack AI Developer & Architect</div>
         </header>
         <main> <!-- Main content wrapper -->
             <div id="home" class="container"> <!-- Renamed original chat container div -->
                 <div class="chat-container"> <!-- This class is for the chat specific styling -->
                     <div class="chat-messages">
                         <div class="message bot-message visible">
-                            Hello! I'm Rishabh's portfolio assistant. Feel free to ask me anything about Rishabh's work, experience, or skills!
+                            Hello! I'm Alex's AI assistant. I'm powered by local, on-device AI. Feel free to ask me anything about Alex's work, tech stack, or visionary projects!
                         </div>
                     </div>
 
@@ -40,58 +40,58 @@
                     </div>
 
                     <div class="chat-input">
-                        <input type="text" placeholder="Ask me anything about Rishabh..." id="userInput">
+                        <input type="text" placeholder="Ask me anything about Alex..." id="userInput">
                         <button onclick="sendMessage()">Send</button>
                     </div>
 
                     <div class="suggested-prompts">
-                        <div class="prompt-chip" onclick="usePrompt('Who is Rishabh Gupta?')">Who is Rishabh Gupta?</div>
-                        <div class="prompt-chip" onclick="usePrompt('What are his skills?')">What are his skills?</div>
-                        <div class="prompt-chip" onclick="usePrompt('Show me his projects')">Show me his projects</div>
+                        <div class="prompt-chip" onclick="usePrompt('Who is Alex Chen?')">Who is Alex Chen?</div>
+                        <div class="prompt-chip" onclick="usePrompt('What is his tech stack?')">What is his tech stack?</div>
+                        <div class="prompt-chip" onclick="usePrompt('Tell me about Project Nova')">Tell me about Project Nova</div>
                     </div>
                 </div>
             </div>
-            <section id="about" class="container">
+            <section id="about" class="container animate-on-scroll">
                 <h2>About Me</h2>
                 <div class="about-content">
                     <div class="about-text">
-                        <p>Hello! I'm Rishabh Gupta, an AI Engineer driven by a passion for building intelligent systems that solve real-world problems. My journey into the world of Artificial Intelligence began with a fascination for how machines can learn, adapt, and make decisions.</p>
-                        <p>Over the years, I've honed my skills in machine learning, deep learning, natural language processing, and computer vision. I thrive on tackling complex challenges and transforming innovative ideas into tangible AI solutions. I believe in the transformative power of AI and am dedicated to contributing to its ethical and impactful advancement.</p>
-                        <p>When I'm not immersed in code or exploring new algorithms, I enjoy reading about the latest tech advancements, hiking, and contributing to open-source projects.</p>
+                        <p>Hi, I'm Alex Chen, a Full-Stack AI Developer obsessed with bridging the gap between cutting-edge AI research and scalable, production-ready web applications. My expertise lies in designing end-to-end architectures that leverage Large Language Models, agentic workflows, and real-time inference.</p>
+                        <p>I specialize in building intelligent agents that autonomous reason and act, utilizing frameworks like LangChain, LlamaIndex, and native WebGPU for local inference. I'm driven by the potential of AI to automate complex workflows and augment human capabilities in unprecedented ways.</p>
+                        <p>Beyond the terminal, I'm a passionate advocate for open-source AI, constantly exploring the latest breakthroughs in model efficiency and edge computing.</p>
                     </div>
                     <div class="about-image">
-                        <img src="https://via.placeholder.com/250" alt="Rishabh Gupta - Profile Picture" style="width:100%;max-width:250px;border-radius:10px;">
+                        <img src="https://via.placeholder.com/250" alt="Alex Chen - Profile Picture" style="width:100%;max-width:250px;border-radius:10px;">
                     </div>
                 </div>
             </section>
-            <section id="projects" class="container">
+            <section id="projects" class="container animate-on-scroll">
                 <h2>My Projects</h2>
                 <div class="projects-grid">
-                    <div class="project-card">
-                        <img src="https://via.placeholder.com/350x200?text=Project+Alpha" alt="Project Alpha Thumbnail">
-                        <h3>Project Alpha</h3>
-                        <p>An innovative AI solution for advanced data analytics, leveraging machine learning to uncover hidden patterns and provide actionable insights from complex datasets.</p>
-                        <p><strong>Technologies:</strong> Python, Scikit-learn, Pandas, TensorFlow</p>
+                    <div class="project-card animate-on-scroll">
+                        <img src="https://via.placeholder.com/350x200?text=Project+Nova" alt="Project Nova Thumbnail">
+                        <h3>Project Nova</h3>
+                        <p>A sophisticated multi-agent orchestration framework. It allows independent AI agents to collaborate on complex software engineering tasks, featuring self-reflection and automatic error correction.</p>
+                        <p><strong>Technologies:</strong> TypeScript, LangChain, OpenAI API, Docker</p>
                         <div class="project-links">
                             <a href="#" class="btn-link">View on GitHub</a>
                             <a href="#" class="btn-link">Live Demo</a>
                         </div>
                     </div>
-                    <div class="project-card">
-                        <img src="https://via.placeholder.com/350x200?text=Project+Beta" alt="Project Beta Thumbnail">
-                        <h3>Project Beta</h3>
-                        <p>A natural language processing engine designed for real-time sentiment analysis and topic modeling from various text sources, enhancing customer feedback understanding.</p>
-                        <p><strong>Technologies:</strong> Python, NLTK, SpaCy, PyTorch</p>
+                    <div class="project-card animate-on-scroll">
+                        <img src="https://via.placeholder.com/350x200?text=Neural+Edge" alt="Neural Edge Thumbnail">
+                        <h3>Neural Edge</h3>
+                        <p>A lightweight, high-performance RAG (Retrieval-Augmented Generation) system optimized for local device deployment. Achieves sub-second inference times using quantized models.</p>
+                        <p><strong>Technologies:</strong> Rust, WebAssembly, ONNX Runtime, Llama.cpp</p>
                         <div class="project-links">
                             <a href="#" class="btn-link">View on GitHub</a>
                             <a href="#" class="btn-link">Live Demo</a>
                         </div>
                     </div>
-                     <div class="project-card">
-                        <img src="https://via.placeholder.com/350x200?text=Project+Gamma" alt="Project Gamma Thumbnail">
-                        <h3>Project Gamma</h3>
-                        <p>A computer vision system for automated object detection and classification in images and videos, built for scalability and high accuracy in diverse environments.</p>
-                        <p><strong>Technologies:</strong> Python, OpenCV, YOLO, Keras</p>
+                     <div class="project-card animate-on-scroll">
+                        <img src="https://via.placeholder.com/350x200?text=SynthWave" alt="SynthWave Thumbnail">
+                        <h3>SynthWave</h3>
+                        <p>An AI-powered generative audio synthesizer. It uses latent diffusion models to generate high-fidelity soundscapes and music tracks based on natural language prompts.</p>
+                        <p><strong>Technologies:</strong> Python, PyTorch, Diffusers, FastAPI, React</p>
                         <div class="project-links">
                             <a href="#" class="btn-link">View on GitHub</a>
                             <a href="#" class="btn-link">Live Demo</a>
@@ -100,14 +100,14 @@
                 </div>
             </section>
             <section id="skills" class="container"></section>
-            <section id="contact" class="container">
+            <section id="contact" class="container animate-on-scroll">
                 <h2>Get In Touch</h2>
-                <p>If you'd like to discuss a project or opportunity, feel free to reach out to me at <a href="mailto:rishabh.placeholder@example.com">rishabh.placeholder@example.com</a>.</p>
+                <p>If you're interested in pushing the boundaries of AI or want to collaborate on an ambitious project, let's connect. Drop me a line at <a href="mailto:alex.chen.ai@example.com">alex.chen.ai@example.com</a>.</p>
             </section>
         </main>
         <footer id="footer">
             <div class="container">
-                <p>&copy; 2024 Rishabh Gupta. All Rights Reserved.</p>
+                <p>&copy; 2024 Alex Chen. All Rights Reserved.</p>
                 <div class="social-links">
                     <a href="#" target="_blank">LinkedIn</a>
                     <a href="#" target="_blank">GitHub</a>

@@ -33,7 +33,7 @@ async function initializeSession() {
             const systemPromptConfig = {
                 initialPrompts: [{
                     role: 'system',
-                    content: `You are a specialized AI assistant for Rishabh Gupta's portfolio. Rishabh is an AI Engineer. Your primary functions are to:\n1. Provide information about Rishabh's background, passion for AI, and journey in the field.\n2. Detail Rishabh's skills, including machine learning (PyTorch, TensorFlow), deep learning, natural language processing (NLTK, SpaCy), computer vision (OpenCV, YOLO), LLMs, Python, JavaScript, and cloud platforms (AWS, GCP).\n3. Describe Rishabh's projects, such as 'Project Alpha' (data analytics), 'Project Beta' (NLP engine for sentiment analysis), and 'Project Gamma' (computer vision for object detection), highlighting the technologies used.\n4. Encourage users to explore the different sections of the website (Home, About, Projects, Skills, Contact).\n5. If asked for opinions or information outside of Rishabh's professional context as presented on the site, politely decline and redirect to portfolio-related topics. Maintain a professional, helpful, and enthusiastic tone.`
+                    content: `You are a specialized AI assistant for Alex Chen's portfolio. Alex is a Full-Stack AI Developer & Architect. Your primary functions are to:\n1. Provide information about Alex's background in bridging cutting-edge AI with scalable web applications.\n2. Detail Alex's tech stack, including Large Language Models, agentic workflows (LangChain, LlamaIndex), native WebGPU, TypeScript, Rust, WebAssembly, Python, and PyTorch.\n3. Describe Alex's projects, such as 'Project Nova' (multi-agent orchestration), 'Neural Edge' (local RAG system), and 'SynthWave' (generative audio), highlighting the technologies used.\n4. Encourage users to explore the different sections of the website (Home, About, Projects, Skills, Contact).\n5. If asked for opinions or information outside of Alex's professional context as presented on the site, politely decline and redirect to portfolio-related topics. Maintain a professional, visionary, and enthusiastic tone.`
                 }],
             };
             modelSession = await window.LanguageModel.create(systemPromptConfig);
@@ -117,4 +117,25 @@ userInput.addEventListener('keypress', (e) => {
     if (e.key === 'Enter') {
         sendMessage();
     }
+});
+
+// Intersection Observer for scroll animations
+document.addEventListener('DOMContentLoaded', () => {
+    const observerOptions = {
+        root: null,
+        rootMargin: '0px',
+        threshold: 0.15
+    };
+
+    const observer = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('in-view');
+                observer.unobserve(entry.target); // Optional: stop observing once animated
+            }
+        });
+    }, observerOptions);
+
+    const animatedElements = document.querySelectorAll('.animate-on-scroll');
+    animatedElements.forEach(el => observer.observe(el));
 });

@@ -1,148 +1,73 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Rishabh Gupta - AI Engineer</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Rishabh Gupta — AI engineer building thoughtful, production-ready intelligent products.">
+  <title>Rishabh Gupta — AI Engineer</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="site-container"> <!-- New overall container -->
-        <nav id="navbar">
-            <div class="container"> <!-- To keep content aligned with other sections -->
-                <a href="#home" class="nav-logo">Rishabh Gupta</a>
-                <ul>
-                    <li><a href="#home">Home</a></li>
-                    <li><a href="#about">About</a></li>
-                    <li><a href="#projects">Projects</a></li>
-                    <li><a href="#skills">Skills</a></li>
-                    <li><a href="#contact">Contact</a></li>
-                </ul>
-            </div>
-        </nav>
-        <header>
-            <h1>Rishabh Gupta</h1>
-            <div class="subtitle">AI Engineer</div>
-        </header>
-        <main> <!-- Main content wrapper -->
-            <div id="home" class="container"> <!-- Renamed original chat container div -->
-                <div class="chat-container"> <!-- This class is for the chat specific styling -->
-                    <div class="chat-messages">
-                        <div class="message bot-message visible">
-                            Hello! I'm Rishabh's portfolio assistant. Feel free to ask me anything about Rishabh's work, experience, or skills!
-                        </div>
-                    </div>
-
-                    <div class="typing-indicator">
-                        <span></span>
-                        <span></span>
-                        <span></span>
-                    </div>
-
-                    <div class="chat-input">
-                        <input type="text" placeholder="Ask me anything about Rishabh..." id="userInput">
-                        <button onclick="sendMessage()">Send</button>
-                    </div>
-
-                    <div class="suggested-prompts">
-                        <div class="prompt-chip" onclick="usePrompt('Who is Rishabh Gupta?')">Who is Rishabh Gupta?</div>
-                        <div class="prompt-chip" onclick="usePrompt('What are his skills?')">What are his skills?</div>
-                        <div class="prompt-chip" onclick="usePrompt('Show me his projects')">Show me his projects</div>
-                    </div>
-                </div>
-            </div>
-            <section id="about" class="container">
-                <h2>About Me</h2>
-                <div class="about-content">
-                    <div class="about-text">
-                        <p>Hello! I'm Rishabh Gupta, an AI Engineer driven by a passion for building intelligent systems that solve real-world problems. My journey into the world of Artificial Intelligence began with a fascination for how machines can learn, adapt, and make decisions.</p>
-                        <p>Over the years, I've honed my skills in machine learning, deep learning, natural language processing, and computer vision. I thrive on tackling complex challenges and transforming innovative ideas into tangible AI solutions. I believe in the transformative power of AI and am dedicated to contributing to its ethical and impactful advancement.</p>
-                        <p>When I'm not immersed in code or exploring new algorithms, I enjoy reading about the latest tech advancements, hiking, and contributing to open-source projects.</p>
-                    </div>
-                    <div class="about-image">
-                        <img src="https://via.placeholder.com/250" alt="Rishabh Gupta - Profile Picture" style="width:100%;max-width:250px;border-radius:10px;">
-                    </div>
-                </div>
-            </section>
-            <section id="projects" class="container">
-                <h2>My Projects</h2>
-                <div class="projects-grid">
-                    <div class="project-card">
-                        <img src="https://via.placeholder.com/350x200?text=Project+Alpha" alt="Project Alpha Thumbnail">
-                        <h3>Project Alpha</h3>
-                        <p>An innovative AI solution for advanced data analytics, leveraging machine learning to uncover hidden patterns and provide actionable insights from complex datasets.</p>
-                        <p><strong>Technologies:</strong> Python, Scikit-learn, Pandas, TensorFlow</p>
-                        <div class="project-links">
-                            <a href="#" class="btn-link">View on GitHub</a>
-                            <a href="#" class="btn-link">Live Demo</a>
-                        </div>
-                    </div>
-                    <div class="project-card">
-                        <img src="https://via.placeholder.com/350x200?text=Project+Beta" alt="Project Beta Thumbnail">
-                        <h3>Project Beta</h3>
-                        <p>A natural language processing engine designed for real-time sentiment analysis and topic modeling from various text sources, enhancing customer feedback understanding.</p>
-                        <p><strong>Technologies:</strong> Python, NLTK, SpaCy, PyTorch</p>
-                        <div class="project-links">
-                            <a href="#" class="btn-link">View on GitHub</a>
-                            <a href="#" class="btn-link">Live Demo</a>
-                        </div>
-                    </div>
-                     <div class="project-card">
-                        <img src="https://via.placeholder.com/350x200?text=Project+Gamma" alt="Project Gamma Thumbnail">
-                        <h3>Project Gamma</h3>
-                        <p>A computer vision system for automated object detection and classification in images and videos, built for scalability and high accuracy in diverse environments.</p>
-                        <p><strong>Technologies:</strong> Python, OpenCV, YOLO, Keras</p>
-                        <div class="project-links">
-                            <a href="#" class="btn-link">View on GitHub</a>
-                            <a href="#" class="btn-link">Live Demo</a>
-                        </div>
-                    </div>
-                </div>
-            </section>
-            <section id="skills" class="container"></section>
-            <section id="contact" class="container">
-                <h2>Get In Touch</h2>
-                <p>If you'd like to discuss a project or opportunity, feel free to reach out to me at <a href="mailto:rishabh.placeholder@example.com">rishabh.placeholder@example.com</a>.</p>
-            </section>
-        </main>
-        <footer id="footer">
-            <div class="container">
-                <p>&copy; 2024 Rishabh Gupta. All Rights Reserved.</p>
-                <div class="social-links">
-                    <a href="#" target="_blank">LinkedIn</a>
-                    <a href="#" target="_blank">GitHub</a>
-                    <a href="#" target="_blank">Twitter</a>
-                </div>
-            </div>
-        </footer>
+  <div class="noise" aria-hidden="true"></div>
+  <nav class="navbar" aria-label="Primary navigation">
+    <a class="brand" href="#home" aria-label="Rishabh Gupta, home">RG<span>·</span></a>
+    <div class="nav-actions">
+      <button class="theme-toggle" type="button" aria-label="Switch to dark mode" aria-pressed="false">
+        <span class="theme-icon theme-icon-sun" aria-hidden="true">☼</span>
+        <span class="theme-icon theme-icon-moon" aria-hidden="true">☾</span>
+      </button>
+      <button class="menu-toggle" type="button" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="nav-links"><span></span><span></span></button>
     </div>
-    <!-- Assuming Google Gemini SDK. Replace with the correct SDK if different -->
-    <script type="module">
-        // This is a placeholder. The actual LanguageModel library (e.g., from a CDN)
-        // would make `LanguageModel` available globally or as a module.
-        // For demonstration, we'll mock a simple version if it's not already defined.
-        if (typeof window.LanguageModel === 'undefined') {
-            console.log("Mocking LanguageModel for development purposes.");
-            window.LanguageModel = {
-                create: async (config) => {
-                    console.log("Mock LanguageModel.create() called");
-                    if (config?.initialPrompts?.[0]?.content) {
-                        console.log("Mock LanguageModel received system prompt:", config.initialPrompts[0].content);
-                    }
-                    return {
-                        prompt: async (message) => {
-                            console.log(`Mock session.prompt() called with: "${message}"`);
-                            await new Promise(resolve => setTimeout(resolve, 1000)); // Simulate network delay
-                            if (message.toLowerCase().includes("error test")) {
-                                throw new Error("Simulated LLM error.");
-                            }
-                            return `Mock response to: "${message}"`;
-                        }
-                    };
-                }
-            };
-        }
-    </script>
-    <script src="script.js"></script>
+    <div class="nav-links" id="nav-links">
+      <a href="#about">About</a><a href="#work">Selected work</a><a href="#stack">Stack</a>
+      <a class="nav-cta" href="mailto:hello@rishabhgupta.dev">Let's talk <span>↗</span></a>
+    </div>
+  </nav>
+
+  <main>
+    <section id="home" class="hero section-shell">
+      <div class="orb orb-one" aria-hidden="true"></div><div class="orb orb-two" aria-hidden="true"></div>
+      <div class="hero-copy reveal">
+        <p class="eyebrow"><span class="live-dot"></span> Available for select collaborations · 2026</p>
+        <h1>Building <em>intelligent</em><br>ideas that feel human.</h1>
+        <p class="hero-intro">I'm Rishabh, an AI engineer shaping useful products at the intersection of machine learning, design, and real-world momentum.</p>
+        <div class="hero-actions"><a class="button button-primary" href="#work">Explore my work <span>↓</span></a><a class="text-link" href="#about">A little more about me <span>→</span></a></div>
+      </div>
+      <aside class="signal-card reveal" aria-label="Current focus">
+        <div class="signal-top"><span>NOW / 01</span><span class="pulse">● LIVE</span></div>
+        <div class="signal-visual"><div class="signal-line"></div><div class="signal-ring ring-one"></div><div class="signal-ring ring-two"></div><div class="signal-core">AI</div></div>
+        <p class="mono-label">CURRENT EXPLORATION</p><h2>Systems that turn complex data into clear decisions.</h2>
+        <div class="signal-footer"><span>ML Systems</span><span>Creative AI</span></div>
+      </aside>
+      <div class="scroll-note"><span></span> Scroll to discover</div>
+    </section>
+
+    <section id="about" class="about section-shell">
+      <p class="section-index reveal">01 / ABOUT</p>
+      <div class="about-grid">
+        <h2 class="reveal">I make AI useful,<br>not just <em>impressive.</em></h2>
+        <div class="about-body reveal"><p>My work starts with the human on the other side of the screen. From early experiments to reliable production systems, I translate ambitious ideas into products people can actually use.</p><p>Currently based in India and working globally. When I'm away from a notebook, you'll find me chasing a new trail, collecting great interfaces, or sharing what I'm learning with the open-source community.</p><a class="text-link" href="mailto:hello@rishabhgupta.dev">Start a conversation <span>↗</span></a></div>
+      </div>
+      <div class="metrics reveal"><div><strong>04<span>+</span></strong><p>years building<br>with AI</p></div><div><strong>18</strong><p>shipped experiments<br>&amp; products</p></div><div><strong>06</strong><p>core disciplines<br>in my toolkit</p></div><div><strong>∞</strong><p>curiosity for<br>what's next</p></div></div>
+    </section>
+
+    <section id="work" class="work section-shell">
+      <div class="section-heading reveal"><p class="section-index">02 / SELECTED WORK</p><h2>Built to make a<br><em>difference.</em></h2><p>Small team energy. Serious technical depth. A few things I've enjoyed bringing to life.</p></div>
+      <div class="project-list">
+        <article class="project project-aurora reveal"><div class="project-visual"><span class="project-number">01</span><div class="aurora-glow"></div><div class="aurora-window"><i></i><i></i><i></i><b>Signal detected</b></div></div><div class="project-copy"><p class="mono-label">PREDICTIVE INTELLIGENCE</p><h3>Aurora <span>↗</span></h3><p>From scattered business signals to a simple, confident next move. An insight engine designed for decision-makers, not data scientists.</p><ul><li>Python</li><li>PyTorch</li><li>FastAPI</li></ul></div></article>
+        <article class="project project-verbatim reveal"><div class="project-visual"><span class="project-number">02</span><div class="word-cloud"><b>idea</b><i>context</i><strong>clarity</strong><em>voice</em><span>intent</span></div></div><div class="project-copy"><p class="mono-label">LANGUAGE SYSTEMS</p><h3>Verbatim <span>↗</span></h3><p>A voice-of-customer workspace that finds the signal in thousands of conversations—then turns it into a story your whole team can act on.</p><ul><li>LLMs</li><li>RAG</li><li>React</li></ul></div></article>
+        <article class="project project-sightline reveal"><div class="project-visual"><span class="project-number">03</span><div class="scan-box"></div><div class="scan-dot"></div><div class="scan-label">OBJECT / 98.4%</div></div><div class="project-copy"><p class="mono-label">COMPUTER VISION</p><h3>Sightline <span>↗</span></h3><p>A real-time visual inspection layer built to help teams spot what matters earlier, faster, and with a little more confidence.</p><ul><li>OpenCV</li><li>YOLO</li><li>AWS</li></ul></div></article>
+      </div>
+    </section>
+
+    <section id="stack" class="stack section-shell"><div class="stack-intro reveal"><p class="section-index">03 / TOOLKIT</p><h2>Fluent in the<br>tools of <em>tomorrow.</em></h2></div><div class="skills-grid reveal"><div><span>01</span><h3>Intelligence</h3><p>Machine learning, deep learning, computer vision, and language models.</p></div><div><span>02</span><h3>Engineering</h3><p>Python, TypeScript, APIs, data pipelines, and cloud-native systems.</p></div><div><span>03</span><h3>Product craft</h3><p>Rapid prototyping, thoughtful UX, and turning ambiguity into momentum.</p></div><div><span>04</span><h3>Always learning</h3><p>Exploring agentic workflows, multimodal AI, and durable evaluation.</p></div></div></section>
+
+    <section class="contact section-shell"><div class="contact-panel reveal"><p class="eyebrow">HAVE A GOOD PROBLEM?</p><h2>Let's make<br>something <em>matter.</em></h2><a href="mailto:hello@rishabhgupta.dev" class="contact-email">hello@rishabhgupta.dev <span>↗</span></a><p class="contact-note">Available for product collaborations, AI strategy, and interesting conversations.</p></div></section>
+  </main>
+  <footer><a class="brand" href="#home">RG<span>·</span></a><p>Designed with intention. Built with curiosity.</p><div><a href="#">LinkedIn</a><a href="#">GitHub</a><a href="#">X / Twitter</a></div><small>© 2026 Rishabh Gupta</small></footer>
+  <script src="script.js"></script>
 </body>
 </html>

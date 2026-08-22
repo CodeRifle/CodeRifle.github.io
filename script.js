@@ -2,7 +2,24 @@ const toggle = document.querySelector('.menu-toggle');
 const nav = document.querySelector('.nav-links');
 const themeToggle = document.querySelector('.theme-toggle');
 
-const savedTheme = localStorage.getItem('theme');
+function getSavedTheme() {
+  try {
+    const theme = localStorage.getItem('theme');
+    return theme === 'dark' || theme === 'light' ? theme : null;
+  } catch {
+    return null;
+  }
+}
+
+function saveTheme(theme) {
+  try {
+    localStorage.setItem('theme', theme);
+  } catch {
+    // Theme switching still works when storage is unavailable.
+  }
+}
+
+const savedTheme = getSavedTheme();
 const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
 
 function applyTheme(theme) {
@@ -16,7 +33,7 @@ applyTheme(savedTheme || (prefersDark ? 'dark' : 'light'));
 
 themeToggle?.addEventListener('click', () => {
   const theme = document.body.classList.contains('dark-mode') ? 'light' : 'dark';
-  localStorage.setItem('theme', theme);
+  saveTheme(theme);
   applyTheme(theme);
 });
 
